@@ -1,12 +1,9 @@
 // ===== VAPI SDK (ES module import) =====
 import VapiModule from "https://cdn.jsdelivr.net/npm/@vapi-ai/web@2.5.2/+esm";
+import { VAPI_PUBLIC_KEY, ASSISTANT_ID } from "./config.js";
 
 // Handle both default export shapes: { default: class } or class directly
 const Vapi = VapiModule?.default ?? VapiModule;
-
-// ===== VAPI Configuration =====
-const VAPI_PUBLIC_KEY = "e4a22f4c-c97c-4108-a477-77688fab0a90";
-const ASSISTANT_ID = "0ed9afb0-eedd-457d-bbe9-08cc8dd3c6c7";
 
 // ===== DOM Elements =====
 const micButton = document.getElementById("micButton");
