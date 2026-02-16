@@ -1,0 +1,1 @@
+cd "c:\Users\Anjal Bhattarai\Desktop\Sama Wellness\vapi-voice-agent" && npx -y http-server -p 5500 -c-1
