@@ -1,12 +1,23 @@
 ## Frontend
 cd "c:\Users\Anjal Bhattarai\Desktop\Sama Wellness\vapi-voice-agent" && npx -y http-server -p 5500 -c-1
 
-## Custom LLM Proxy (Ollama)
+## Custom LLM Proxy (Ollama + RAG + Conversation Memory)
 
 ### One-time setup
 ```bash
-pip install -r requirements.txt
-ollama pull llama3.2
+# Install Python deps
+uv sync            # or: pip install -e .
+
+# Pull models (LLM + embedding)
+ollama pull mistral:7b
+ollama pull nomic-embed-text
+
+# Configure environment
+cp .env.example .env
+# Edit .env → set PINECONE_API_KEY, PINECONE_INDEX_NAME, etc.
+
+# Ingest documents into Pinecone (put .txt / .md files in documents/)
+python ingest.py
 ```
 
 ### Run (3 terminals)

@@ -7,6 +7,9 @@ config.js
 __pycache__/
 *.pyc
 
+# SQLite conversation DB
+conversations.db
+
 # OS
 .DS_Store
 Thumbs.db
